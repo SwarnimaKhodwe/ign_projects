@@ -9,7 +9,7 @@ class mobilenet_2:
         self.img = cv2.imread(self.name,-1)  #read the image in original format
 
     def preprocess(self):
-        if len(self.img.shape) == 2:  ##check weather the image is grayscale or not
+        if len(self.img.shape) == 2:  #check weather the image is grayscale or not
             print("Invalid image.")
             return 0
           
@@ -48,7 +48,7 @@ class mobilenet_2:
                 self.img3[i][j]= self.img3[i][j]/255
 
         self.img3 = np.expand_dims(self.img3,1)  #add new dimenssion
-        self.img3 = np.rollaxis(self.img3, 1, 0)  #swaap the position 0 with 1 to get the required format 
+        self.img3 = np.rollaxis(self.img3, 1, 0)  #swap the position 0 with 1 to get the required format 
 
         return self.img3
 
